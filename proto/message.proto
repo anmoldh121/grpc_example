@@ -1,0 +1,12 @@
+syntax="proto3";
+package proto;
+
+
+message ClientMessage {
+    string message = 1;
+}
+
+service MessageService {
+    rpc getMessage(ClientMessage) returns (ClientMessage);
+    rpc getMessageStream(ClientMessage) returns(stream ClientMessage);
+}
